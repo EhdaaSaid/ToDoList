@@ -1,0 +1,26 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)= "onAddNewTask()"> Add New</button>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">No</th>
+    <th scope="col">Title</th>
+    <th scope="col">Discription</th>
+    <th scope="col">Action</th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor = "let task of tasks ; let i = index " >
+    <th scope="row">{{i + 1}}</th>
+    <td>{{task.title}}</td>
+    <td>{{task.desc}}</td>
+    <td> 
+      <a class="pointer" (click)="onEditTask(task)">Edit</a> 
+      <a class="pointer" (click)="onDeletTask(task.id)">Delete</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
